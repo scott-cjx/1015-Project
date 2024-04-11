@@ -1,6 +1,6 @@
 # Predicting Taxi Availability Depending on Weather Conditions
 
-This is a mini-project for SC 1015 (Introduction to Data Science and Artificial Intelligence). Our team's obective is to predict the availability of taxis in Singapore based on weather conditions. 
+This is a mini-project for SC 1015 (Introduction to Data Science and Artificial Intelligence). Our team's objective is to predict the availability of taxis in Singapore based on weather conditions. 
 
 1. [Data Collection](#data-collection)
 2. [Data Preprocessing](#data-preprocessing)
