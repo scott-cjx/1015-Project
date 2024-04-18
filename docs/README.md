@@ -47,9 +47,9 @@ These date ranges cover three weeks' worth of data for analysis and experimentat
 ## Exploratory Data Analysis
 
 ## Contributions
-Teo Zin Han - Data Collection and Scraping <br>
-Hashim - Data Cleaning and Preparation <br>
-Scott - EDA and Machine Learning <br>
+**Teo Zin Han** - Data Collection and Scraping <br>
+**Hashim** - Data Cleaning and Preparation <br>
+**Scott** - EDA and Machine Learning <br>
 
 ## References
 https://beta.data.gov.sg/collections/1456/datasets/d_91ffc58263cff535910c16a4166ccbc3/view
