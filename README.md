@@ -5,9 +5,8 @@ This is a mini-project for SC 1015 (Introduction to Data Science and Artificial 
 1. [Data Collection](#data-collection)
 2. [Data Cleaning and Preparation](#data-cleaning-and-preparation)
 3. [Exploratory Data Analysis](#exploratory-data-analysis)
-4. [Model Building](#model-building)
-5. [Model Evaluation](#model-evaluation)
-6. [Conclusion](#conclusion)
+4. [Model Building and Evaluation](#model-building-and-evaluation)
+5. [Conclusion](#conclusion)
 
 ## Data Collection
 
@@ -45,6 +44,59 @@ The date/week ranges used in the project are as follows:
 These date ranges cover three weeks' worth of data for analysis and experimentation.
 
 ## Exploratory Data Analysis
+Notebook: `1015_WeatherTaxi_AI.ipynb`
+This notebook is used for additional preparation as well as exploratory data analysis (EDA) and machine learning.
+
+We explored the correlations the categorical data had with the `Taxi Available` datapoints.
+We also plotted charts for
+- Taxis Available vs Time
+- Taxis Available vs Weather Forecast
+- Taxis Available vs Day of the Week
+- Histogram for Taxis Available
+
+Furthermore we implemented label encoding for the `FORECAST` datapoint, grouping the following together:
+```
+0: ['Fair (Night)', 'Fair (Day)', 'Fair & Warm'],
+1: ['Partly Cloudy (Night)', 'Partly Cloudy (Day)', 'Cloudy'],
+2: ['Showers', 'Light Showers', 'Thundery Showers', 'Heavy Thundery Showers']
+```
+
+## Model Building and Evaluation
+Notebook: `1015_WeatherTaxi_AI.ipynb`
+
+
+### DecisionTreeClassifier for Forecast
+We first used a `DecisionTreeClassifier` to classify `Forecast` from the other variables: `AREA, HOUR, DAY, TAXI_AVAILABLE`.
+
+We found that:
+
+- Model has HIGH True Positive Rate for (1)
+- HIGH False Positive Rate for (0 and 2)
+
+Thus implying that it just predicts most data as (1).
+
+And that although it has a HIGH score of `0.7940833`, it is unusable to correctly predict Forecast.
+
+### DecisionTreeRegressor for TAXI_AVAILABLE
+We then used a DecisionTreeRegressor to predict the value of `TAXI_AVAILABLE` given `AREA, HOUR, DAY, FORECAST`.
+
+We found that
+- Model has HIGH R^2 (0-1) value of 0.7593102, indicating good fit.
+- Model has HIGH MSE too, this indicates large errors in predictions that R^2 does not pick up.
+- It is usable to predict the `TAXI_AVAILABLITY`.
+- Based on feature importances, the time of day is most important in predicting `TAXI_AVAILABLITY`
+
+
+### RandomForestRegressor for TAXI_AVAILABLE
+We then used a RandomForestRegressor to predict the value of `TAXI_AVAILABLE` given `AREA, HOUR, DAY, FORECAST`.
+
+We found that
+- Model has HIGH R^2 (0-1) value of 0.8219488, indicating good fit.
+- Model has HIGH MSE too, this indicates large errors in predictions that R^2 does not pick up.
+- It is usable to predict the `TAXI_AVAILABLITY`.
+- Based on feature importances, the time of day is most important in predicting `TAXI_AVAILABLITY`
+- This model better than Decision Tree Regressor as it has Higher R^2 and Lower MSE.
+
 
 ## Contributions
 **Teo Zin Han** - Data Collection and Scraping <br>
